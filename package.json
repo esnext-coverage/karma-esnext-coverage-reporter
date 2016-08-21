@@ -1,0 +1,42 @@
+{
+  "name": "karma-esnext-coverage-reporter",
+  "version": "0.0.1",
+  "description": "esnext-coverage reporter for Karma",
+  "main": "dist/karma-plugin.js",
+  "scripts": {
+    "transpile": "babel src --out-dir dist",
+    "prepublish": "npm run lint && npm test && npm run transpile",
+    "lint": "eslint {src,test}/**/*.js",
+    "test": "tape -r babel-register test/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esnext-coverage/karma-esnext-coverage-reporter.git"
+  },
+  "keywords": [
+    "esnext-coverage",
+    "karma",
+    "coverage"
+  ],
+  "author": "Oleg Sklyanchuk <sklyanchuk@gmail.com> (http://olegskl.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esnext-coverage/karma-esnext-coverage-reporter/issues"
+  },
+  "homepage": "https://github.com/esnext-coverage/karma-esnext-coverage-reporter",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "deep-extend": "^0.4.1",
+    "mkdirp": "^0.5.1",
+    "promise": "^7.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "eslint": "^3.4.0",
+    "eslint-config-meetic": "^2.0.0",
+    "sinon": "^1.17.5",
+    "tape": "^4.6.0"
+  }
+}
